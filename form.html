@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="body-form">
+    <button type="button" onclick="window.open('login.html','_self');" class="logout-btn">Выйти</button>
+    <div class="container form">
+        <h1>Форма заявки на обучение в "Корочки.есть"</h1>
+        <form id="cleaningForm" class="form__wrapper">
+            <div class="fio">
+                <div class="fio-input">
+                    <input type="text" id="fullName" placeholder="Фамилия   " required>
+                    <input type="text" id="fullName" placeholder="Имя" required>
+                    <input type="text" id="fullName" placeholder="Отчество" required>
+                </div>
+                <label for="fullName">Укажите точно как в паспорте</label>
+            </div>
+            <select id="courses" required>
+                <option value="">Выберите курс</option>
+                <option value="Курс 1">Курс 1</option>
+                <option value="Курс 2">Курс 2</option>
+                <option value="Курс 3">Курс 3</option>
+                <option value="Курс 4">Курс 4</option>
+            </select>
+            <label for="date">Дата начала обучения:</label>
+            <input type="date" id="date" required>
+            <label for="pay">Желаемый способ оплаты:</label>
+            <select id="pay" required>
+                <option value="">Выберите способ оплаты</option>
+                <option value="Наличные">Наличные</option>
+                <option value="По номеру телефона">По номеру телефона</option>
+            </select>
+            <button type="submit">Отправить заявку</button>
+            .
+        </form>
+        <button onclick="window.open('viewform.html','_self');" class="addon-btn">Посмотреть свои заявки</button>
+    </div>
+    <script>
+document.getElementById("cleaningForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const data = {
+        surname: document.querySelectorAll("#fullName")[0].value,
+        name: document.querySelectorAll("#fullName")[1].value,
+        patronymic: document.querySelectorAll("#fullName")[2].value,
+        course: document.getElementById("courses").value,
+        date: document.getElementById("date").value,
+        pay: document.getElementById("pay").value
+    };
+
+    fetch("save_form.php", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    })
+    .then(r => r.text())
+    .then(t => {
+        alert("Заявка отправлена!");
+        document.getElementById("cleaningForm").reset();
+        });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="body-login">
+    <div class="container">
+        <h1>Вход</h1>
+        <form id="loginForm" class="form__wrapper">
+            <input type="text" name="login" placeholder="Логин">
+            <input type="password" name="password" placeholder="Пароль">
+            <button type="button" onclick="window.open('form.html','_self');">Войти</button>
+        </form>
+        <div class="message" id="message"></div>
+        <p>Еще нет аккаунта? 
+        <button onclick="window.open('reg.html','_self');" class="addon-btn">Зарегистрироваться</button>
+    </div>
+</body>
+<script>
+document.querySelector("button").addEventListener("click", function () {
+    const login = document.querySelector('input[name="login"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+
+    if (login === "admin" && password === "admin") {
+        window.open("adminform.html", "_self");
+    } else {
+        window.open("form.html", "_self");
+    }
+});
+</script>
+
+</html>

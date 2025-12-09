@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Регистрация</title>  
+</head>
+<body class="body-reg">
+    <div class="container">
+        <h1>Регистрация</h1>
+        <form id="registrationForm" class="form__wrapper">
+            <input type="text" name="fullName" placeholder="ФИО" required>
+            <input type="tel" name="phone" placeholder="Номер телефона" required>
+            <input type="email" name="email" placeholder="Электронная почта" required>
+            <input type="text" name="username" placeholder="Логин" required> 
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="button" onclick="window.open('form.html','_self');">Зарегистрироваться</button>
+        </form>
+        <p>Или уже есть аккаунт? <a class="Enter" href="login.html">Войти</a></p>
+    </div>
+</body>
+</html> 

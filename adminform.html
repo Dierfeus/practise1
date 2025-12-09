@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <a class="logout-btn" href="login.html">Выйти</a>
+    <div class="container form form__admmin">
+        <h1>Форма заявки на обучение в "Корочки.есть"</h1>
+        <form id="cleaningForm" class="form__wrapper form__wrapper__admmin">
+            <label for="fullName">ФИО:</label>
+            <input type="text" id="fullName" required>
+            <label for="courses">Курс:</label>
+            <select id="courses" required>
+                <option value="">Выберите курс</option>
+                <option value="Курс 1">Курс 1</option>
+                <option value="Курс 2">Курс 2</option>
+                <option value="Курс 3">Курс 3</option>
+                <option value="Курс 4">Курс 4</option>
+            </select>
+            <label for="date">Дата начала обучения:</label>
+            <input type="date" id="date" required>
+            <label for="pay">Желаемый способ оплаты:</label>
+            <select id="pay" required>
+                <option value="">Выберите способ оплаты</option>
+                <option value="Наличные">Наличные</option>
+                <option value="По номеру телефона">По номеру телефона</option>
+            </select>
+            <button type="submit">Отправить заявку</button>
+        </form>   
+        <h2>Список заявок</h2>
+        <ul id="requestList"></ul>       
+        <h2>Принятые заявки</h2>
+        <ul id="acceptedRequestList"></ul>        
+        <h2>Отклонённые заявки</h2>
+        <ul id="rejectedRequestList"></ul>        
+    </div>
+</body>
+</html>
