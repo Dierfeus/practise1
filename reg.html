@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <title>Регистрация | Курсолоджи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Регистрация</title>  
@@ -10,15 +11,29 @@
     <div class="container">
         <h1>Регистрация</h1>
         <form id="registrationForm" class="form__wrapper">
-            <input type="text" name="fullName" placeholder="ФИО" required>
+            <div class="fio">
+                <div class="fio-input">
+                    <input type="text" id="form-fio-last-name" placeholder="Фамилия" required>
+                    <input type="text" id="form-fio-first-name" placeholder="Имя" required>
+                    <input type="text" id="form-fio-middle-name" placeholder="Отчество" required>
+                </div>
+                <label for="form-fio-last-name">Укажите точно как в паспорте</label>
+            </div>
             <input type="tel" name="phone" placeholder="Номер телефона" required>
             <input type="email" name="email" placeholder="Электронная почта" required>
             <input type="text" name="username" placeholder="Логин" required> 
             <input type="password" name="password" placeholder="Пароль" required>
-            <button type="button" onclick="window.open('form.html','_self');">Зарегистрироваться</button>
+            <button type="submit">Зарегистрироваться</button>
         </form>
-        <p>Или уже есть аккаунт? <a class="Enter" href="index.html">Войти</a></p>
+        <p class="addon-btn-descr">Или уже есть аккаунт?</p>
+        <button onclick="window.open('index.html','_self');" class="addon-btn">Войти</button>
+        
     </div>
-</body>
-</html> 
 
+</body>
+
+
+<script src="js/db.js"></script>
+<script src="js/register.js"></script>
+
+</html> 

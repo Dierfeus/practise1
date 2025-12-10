@@ -11,31 +11,65 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     font-family: 'YS-Text', Arial, sans-serif;
     color: #272733;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(fons/form_bg.webp);
+} 
+.body-admin {
+    background-image: none; 
 }
+
+/*
 .body-login {background-image: url(fons/login_bg.webp);}
 .body-reg {background-image: url(fons/reg_bg.webp);}
 .body-form {background-image: url(fons/form_bg.webp);}
 .body-viewform {background-image: url(fons/viewform_bg.webp);}
+*/
 
+
+h1 {
+    margin-bottom: 10px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 28px;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+.logotext {
+    font-weight: 700;
+    font-size: 24px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.logo-img {
+    width: 64px;
+}
 .container {
     background-color: #ffffff;
-    width: 500px;
-    height: 500px;
+    min-width: 280px;
+    max-width: 600px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px;
     box-shadow: 8px 8px 32px 0px rgba(34, 60, 80, 0.2);
+    margin: 20px;
+    margin-top: 120px;
+    
 }
-.form {
-    width: 700px;
-    height: 700px;
-}
+
 .form__wrapper {
     display: flex;
     flex-direction: column;
@@ -49,12 +83,13 @@ form {
 input, select {
     border-radius: 20px;
     width: 100%;
-    height: 42px;
+    height: 56px;
     font-size: 20px;
     margin: 10px 0;
     padding-left: 10px;
     background-color: #fff;
     border: 1px solid #d8dce6;
+    min-width: 100px;
 }
 input::placeholder {
     color: #272733;
@@ -63,9 +98,9 @@ select {
     cursor: pointer;
 }
 button {
-    border-radius: 10px;
+    border-radius: 20px;
     width: 100%;
-    height: 42px;
+    height: 56px;
     background-color: #292933 ;
     color: #fff;
     font-size: 20px;
@@ -73,24 +108,38 @@ button {
     margin: 10px 0;
     cursor: pointer;
 }
+button:hover {
+    background-color: #1b1b26;
+    transition: background-color .15s linear;
+}
 .logout-btn {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    text-decoration: none;
     width: 100px;
 }
 .addon-btn {
     color: #292933;
     background-color: #f4f5f8;
 }
-
-
+.addon-btn-descr {
+    align-self: baseline;
+}
+.addon-btn:hover {
+    background-color: #f0f1f5;
+    transition: background-color .15s linear;
+}
+/*
+@media screen and (max-width: 425px) {
+    body {
+        background-image: none !important;
+        background-color: #fff;
+    }
+}
+*/
 /* form */
 .fio-input {
     display: flex;
     gap: 10px;
     flex: 1 3 1;
+    flex-wrap: wrap;
 }
 .fio {
     border: 1px solid #d8dce6;
@@ -98,6 +147,9 @@ button {
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
+}
+#registrationForm, #loginForm{
+    margin-bottom: 30px;
 }
 
 
@@ -109,4 +161,54 @@ button {
 .form__wrapper__admmin {
     flex-direction: row;
     justify-content: space-between;
+}
+.status-btn {
+    width: 30%;
+    font-size: 12px;
+}
+.requestList-wrp {
+    border: 1px solid #d8dce6;
+    border-radius: 16px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* view + js */
+.request-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.request-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.status-btn-wrp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.request-card p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+#requestList, #rejectedRequestList, #acceptedRequestList {
+    padding: 0;
+    list-style: none
 }

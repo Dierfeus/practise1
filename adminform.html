@@ -2,24 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Администрирование | Курсолоджи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    <a class="logout-btn" href="login.html">Выйти</a>
+<body class="body-admin">
+    <div class="header">
+        <div class="logo">
+            <img src="fons/logo.webp" alt="Курсолоджи" class="logo-img">
+            <p class="logotext">Курсолоджи</p>
+        </div>
+        <button type="button" onclick="window.open('index.html','_self');" class="logout-btn">Выйти</button>
+
+    </div>
     <div class="container form form__admmin">
         <h1>Форма заявки на обучение в "Корочки.есть"</h1>
-        <form id="cleaningForm" class="form__wrapper form__wrapper__admmin">
-            <label for="fullName">ФИО:</label>
-            <input type="text" id="fullName" required>
-            <label for="courses">Курс:</label>
+        <form id="coursesForm" class="form__wrapper">
+            <div class="fio">
+                <div class="fio-input">
+                    <input type="text" id="form-fio-last-name" placeholder="Фамилия" required>
+                    <input type="text" id="form-fio-first-name" placeholder="Имя" required>
+                    <input type="text" id="form-fio-middle-name" placeholder="Отчество" required>
+                </div>
+                <label for="form-fio-last-name">Укажите точно как в паспорте</label>
+            </div>
             <select id="courses" required>
                 <option value="">Выберите курс</option>
-                <option value="Курс 1">Курс 1</option>
-                <option value="Курс 2">Курс 2</option>
-                <option value="Курс 3">Курс 3</option>
-                <option value="Курс 4">Курс 4</option>
+                <option value="09.02.07-1">09.02.07-1: Администратор баз данных</option>
+                <option value="09.02.07-3">09.02.07-3: Разработчик веб и мультимедийных приложений</option>
+                <option value="09.02.07-5">09.02.07-5: Специалист по информационным системам</option>
+                <option value="09.02.07-7">09.02.07-7: Технический писатель</option>
             </select>
             <label for="date">Дата начала обучения:</label>
             <input type="date" id="date" required>
@@ -30,13 +43,28 @@
                 <option value="По номеру телефона">По номеру телефона</option>
             </select>
             <button type="submit">Отправить заявку</button>
-        </form>   
-        <h2>Список заявок</h2>
-        <ul id="requestList"></ul>       
-        <h2>Принятые заявки</h2>
-        <ul id="acceptedRequestList"></ul>        
-        <h2>Отклонённые заявки</h2>
-        <ul id="rejectedRequestList"></ul>        
+            
+        </form>          
+    </div>
+    <div class="container form form__admmin">
+        <div class="requestList-wrp">
+            <h2>Новые заявки</h2>
+            <ul id="requestList"></ul>
+        </div>
+        <div class="requestList-wrp">
+            <h2>Идет обучение</h2>
+            <ul id="acceptedRequestList"></ul> 
+        </div>
+        <div class="requestList-wrp">
+            <h2>Обучение завершенно</h2>
+            <ul id="rejectedRequestList"></ul>
+        </div>
+                   
     </div>
 </body>
+
+
+<script src="js/db.js"></script>
+<script src="js/adminform.js"></script>
+
 </html>
