@@ -6,14 +6,26 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    <a class="logout-btn" href="login.html">Выйти</a>
+<body class="body-admin">
+    <div class="header">
+        <div class="logo">
+            <img src="fons/logo.webp" alt="Курсолоджи" class="logo-img">
+            <p class="logotext">Курсолоджи</p>
+        </div>
+        <button type="button" onclick="window.open('index.html','_self');" class="logout-btn">Выйти</button>
+
+    </div>
     <div class="container form form__admmin">
         <h1>Форма заявки на обучение в "Корочки.есть"</h1>
-        <form id="cleaningForm" class="form__wrapper form__wrapper__admmin">
-            <label for="fullName">ФИО:</label>
-            <input type="text" id="fullName" required>
-            <label for="courses">Курс:</label>
+        <form id="cleaningForm" class="form__wrapper">
+            <div class="fio">
+                <div class="fio-input">
+                    <input type="text" id="form-fio-first-name" placeholder="Фамилия" required>
+                    <input type="text" id="form-fio-last-name" placeholder="Имя" required>
+                    <input type="text" id="form-fio-middle-name" placeholder="Отчество" required>
+                </div>
+                <label for="fname">Укажите точно как в паспорте</label>
+            </div>
             <select id="courses" required>
                 <option value="">Выберите курс</option>
                 <option value="Курс 1">Курс 1</option>
@@ -30,13 +42,23 @@
                 <option value="По номеру телефона">По номеру телефона</option>
             </select>
             <button type="submit">Отправить заявку</button>
-        </form>   
-        <h2>Список заявок</h2>
-        <ul id="requestList"></ul>       
-        <h2>Принятые заявки</h2>
-        <ul id="acceptedRequestList"></ul>        
-        <h2>Отклонённые заявки</h2>
-        <ul id="rejectedRequestList"></ul>        
+            
+        </form>          
+    </div>
+    <div class="container form form__admmin">
+
+            <h2>Новые заявки</h2>
+            <ul id="requestList"></ul>       
+            <h2>Идет обучение</h2>
+            <ul id="acceptedRequestList"></ul>        
+            <h2>Обучение завершенно</h2>
+            <ul id="rejectedRequestList"></ul>
+
     </div>
 </body>
+
+
+<script src="js/db.js"></script>
+<script src="js/adminform.js"></script>
+
 </html>

@@ -12,24 +12,17 @@
         <form id="loginForm" class="form__wrapper">
             <input type="text" name="login" placeholder="Логин">
             <input type="password" name="password" placeholder="Пароль">
-            <button type="button" onclick="window.open('form.html','_self');">Войти</button>
+            <button type="submit">Войти</button>
         </form>
         <div class="message" id="message"></div>
-        <p>Еще нет аккаунта? 
+        <p class="addon-btn-descr">Еще нет аккаунта?</p>
         <button onclick="window.open('reg.html','_self');" class="addon-btn">Зарегистрироваться</button>
     </div>
 </body>
-<script>
-document.querySelector("button").addEventListener("click", function () {
-    const login = document.querySelector('input[name="login"]').value;
-    const password = document.querySelector('input[name="password"]').value;
 
-    if (login === "admin" && password === "admin") {
-        window.open("adminform.html", "_self");
-    } else {
-        window.open("form.html", "_self");
-    }
-});
-</script>
+<script src="js/db.js"></script>
+<script src="js/login.js"></script>
+
+
 
 </html>
